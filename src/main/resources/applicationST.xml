@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 객체 생성 -->
+	<bean id="student" class="com.care.di02.Student" />
+	
+	<!-- stb = new STBean();
+		 stb.setSt(student) -->
+	<bean id="stb" class="com.care.di02.STBean">
+	<!-- 
+		<property name="st">
+			<ref bean="student"/> 객체 저장
+		</property>
+	 -->
+	 <!-- STBean 파일에서 설정한 이름 그대로 설정해줘야 함 -->
+		<property name="st" ref="student"></property>
+		<property name="name" value="김씨" />
+		<property name="age">
+			<value>30</value>
+		</property>	
+	</bean>
+</beans>
