@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="prints" class="com.care.di_test.PrintString" />
+	
+	<bean id="printb" class="com.care.di_test.PrintBean" >
+		<property name="ps" ref="prints" /> <!-- settr 통해 주입 ref: 이용할 객체 -->
+		<property name="print" value="test 프린트" />
+	</bean>
+
+</beans>
